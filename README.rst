@@ -1,6 +1,6 @@
 |license|
 
-:Version: 0.0.0
+:Version: 0.1.0
 :Web: https://github.com/hadenlabs/terraform-aws-lambda
 :Download: https://github.com/hadenlabs/terraform-aws-lambda
 :Source: https://github.com/hadenlabs/terraform-aws-lambda
