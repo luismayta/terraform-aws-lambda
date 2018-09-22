@@ -20,7 +20,7 @@ The module works in two distinct modes:
 
 Include this repository as a module in your existing terraform code:
 
-.. code-block:: hcl
+.. code-block:: 
 
     module "lambda" {
     source              = "git::https://github.com/hadenlabs/terraform-aws-lambda.git?ref=0.1.0"
@@ -87,8 +87,8 @@ Made with :heart: ️:coffee:️ and :pizza: by `company`_.
 
 .. Links
 .. _`CHANGELOG`: CHANGELOG.rst
-.. _`CONTRIBUTORS`: AUTHORS.rst
-.. _`CONTRIBUTING`: CONTRIBUTING.rst
+.. _`CONTRIBUTORS`: docs/AUTHORS.rst
+.. _`CONTRIBUTING`: docs/CONTRIBUTING.rst
 .. _`LICENSE`: LICENSE
 
 
