@@ -1,6 +1,6 @@
 |license|
 
-:Version: 0.1.0
+:Version: 0.1.1
 :Web: https://github.com/hadenlabs/terraform-aws-lambda
 :Download: https://github.com/hadenlabs/terraform-aws-lambda
 :Source: https://github.com/hadenlabs/terraform-aws-lambda
@@ -23,7 +23,7 @@ Include this repository as a module in your existing terraform code:
 .. code-block:: 
 
     module "lambda" {
-    source              = "git::https://github.com/hadenlabs/terraform-aws-lambda.git?ref=0.1.0"
+    source              = "git::https://github.com/hadenlabs/terraform-aws-lambda.git?ref=0.1.1"
     name                = "${var.name}"
     namespace           = "${var.namespace}"
     stage               = "${var.stage}"
