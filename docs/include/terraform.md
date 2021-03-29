@@ -3,42 +3,31 @@
 This document gives an overview of variables used in the platform of the terraform-aws-lambda.
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| terraform | >= 0.14 |
-| github | >=4.5.0 |
-| local | >=1.3.0 |
+No requirements.
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| github | >=4.5.0 |
+| aws | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| collaborators | List of Collaborator Objects | <pre>list(object({<br>    username   = string<br>    permission = string<br>  }))</pre> | `[]` | no |
-| default\_branch | Name of the Default Branch of the Repository | `string` | `"develop"` | no |
-| deploy\_keys | The name of repositories. | <pre>list(object({<br>    title     = string<br>    key       = string<br>    read_only = bool<br>  }))</pre> | `[]` | no |
-| description | The description of the repository. | `string` | n/a | yes |
-| files | list files for repository | <pre>list(object({<br>    branch              = string<br>    file                = string<br>    content             = string<br>    commit_message      = string<br>    commit_author       = string<br>    commit_email        = string<br>    overwrite_on_create = bool<br>  }))</pre> | `[]` | no |
-| is\_git\_flow | Git Flow - Github Flow | `bool` | `false` | no |
-| name | The name of the repository. | `string` | n/a | yes |
-| pages | Configuration block for GitHub Pages | `map(any)` | `{}` | no |
-| secrets | secrets for repository | `map(any)` | `{}` | no |
-| settings | Create and manage settings. | `map(any)` | `{}` | no |
-| template | Template Repository to use when creating the Repository | `map(string)` | `{}` | no |
-| topics | topics of project. | `list(string)` | `[]` | no |
-| visibility | The visibility of the repository private or public. | `string` | `"private"` | no |
+| \_attributes | n/a | `list` | `[]` | no |
+| \_delimiter | n/a | `string` | `"-"` | no |
+| \_tags | n/a | `map` | `{}` | no |
+| handler | The handler name of the lambda (a function defined in your lambda) | `string` | `"handler"` | no |
+| name | The name of the lambda to create, which also defines (i) the archive name (.zip), (ii) the file name, and (iii) the function name | `any` | n/a | yes |
+| namespace | n/a | `any` | n/a | yes |
+| role | IAM role attached to the Lambda Function (ARN) | `any` | n/a | yes |
+| runtime | The runtime of the lambda to create | `string` | `"nodejs"` | no |
+| stage | n/a | `any` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| deploy\_key | output instance deploy\_key |
-| files | output instance github files |
-| instance | output instance repository |
-| secrets | output instance github actions secrets |
+| name | n/a |
 
