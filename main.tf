@@ -1,18 +1,22 @@
 module "label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.3.1"
-  namespace  = "${var.namespace}"
-  stage      = "${var.stage}"
-  name       = "${var.name}"
-  delimiter  = "${var._delimiter}"
-  attributes = "${var._attributes}"
-  tags       = "${var._tags}"
+  source     = "cloudposse/label/null"
+  version    = "0.24.1"
+  namespace  = var.namespace
+  stage      = var.stage
+  name       = var.name
+  delimiter  = var.delimiter
+  attributes = var.attributes
+  tags       = var.tags
 }
 
 
-resource "aws_lambda_function" "lambda" {
-  filename      = "${module.label.id}.zip"
-  function_name = "${module.label.id}_${var.handler}"
-  role          = "${var.role}"
-  handler       = "${module.label.id}.${var.handler}"
-  runtime       = "${var.runtime}"
+resource "aws_lambda_function" "this" {
+  filename      = format("%s.zip", module.label.id)
+  function_name = format("%s_%s", module.label.id, var.handler)
+  role          = var.role
+  handler       = var.handler
+  runtime       = var.runtime
+  tracing_config = {
+    mode = "Active"
+  }
 }
