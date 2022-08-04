@@ -7,20 +7,11 @@
 # Name of this project
 name: terraform-aws-lambda
 
-# Tags of this project
-tags:
-  - github
-  - repository
-
-# Categories of this project
-categories:
-  - terraform-modules/github
-
 email:
   support: support@hadenlabs.com
 
 # Logo for this project
-#logo: docs/logo.png
+# logo: docs/logo.png
 
 # License of this project
 license: 'LGPL-3.0'
@@ -30,27 +21,45 @@ github_repo: hadenlabs/terraform-aws-lambda
 
 # Badges to display
 badges:
-  - name: Lint
-    image: https://github.com/hadenlabs/terraform-aws-lambda/actions/workflows/lint.yml/badge.svg?branch=develop
-    url: https://github.com/hadenlabs/terraform-aws-lambda/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/hadenlabs/terraform-aws-lambda.svg
-    url: https://github.com/hadenlabs/terraform-aws-lambda/issues
   - name: Latest Release
-    image: https://img.shields.io/github/release/hadenlabs/terraform-aws-lambda.svg
+    image: https://img.shields.io/github/release/hadenlabs/terraform-aws-lambda
     url: https://github.com/hadenlabs/terraform-aws-lambda/releases
+  - name: Lint
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-aws-lambda/lint-code
+    url: https://github.com/hadenlabs/terraform-aws-lambda/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-aws-lambda/ci
+    url: https://github.com/hadenlabs/terraform-aws-lambda/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/hadenlabs/terraform-aws-lambda/test
+    url: https://github.com/hadenlabs/terraform-aws-lambda/actions?workflow=test
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange
+    url: https://keepachangelog.com
+  - name: Terraform Version
+    image: https://img.shields.io/badge/terraform-1.x%20|%200.15%20|%200.14%20|%200.13%20|%200.12.20+-623CE4.svg?logo=terraform
+    url: https://github.com/hashicorp/terraform/releases
+
+requirements: |-
+
+  This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
+
+  - [gomplate](https://github.com/hairyhenderson/gomplate)
+  - [terraform](https://github.com/hashicorp/terraform)
+  - [taskfile](https://github.com/go-task/task)
 
 # Short description of this project
 description: |-
-  Terraform module to provision an github repository.
+  Terraform module to provision an aws lambda.
 
-# How to use this project
-usage: |-
-  ```hcl
-
-  ```
-
-  Full working example can be found in [example](./example) folder.
+usages:
+  - docs/usage.md
 
 examples:
   - 'docs/examples/common.md'

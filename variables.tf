@@ -13,18 +13,6 @@ variable "stage" {
   description = "The name of stage (dev,staging,prod)"
 }
 
-variable "delimiter" {
-  type        = string
-  description = "The delimiter of label"
-  default     = "-"
-}
-
-variable "attributes" {
-  type        = list(any)
-  description = "The attributes of list"
-  default     = []
-}
-
 variable "tags" {
   type        = map(any)
   description = "The tags for add resources"
@@ -45,4 +33,39 @@ variable "role" {
 variable "handler" {
   type        = string
   description = "The handler name of the lambda (a function defined in your lambda)"
+}
+
+variable "code_location" {
+  type        = string
+  description = "Folder code"
+}
+
+variable "environments" {
+  type        = map(any)
+  description = "Environment variables for lambda function"
+  default     = {}
+}
+
+variable "subnets" {
+  type        = list(string)
+  description = "Subnets"
+  default     = []
+}
+
+variable "sg_ids" {
+  type        = list(string)
+  description = "Security groups"
+  default     = []
+}
+
+variable "timeout" {
+  type        = number
+  description = "timeout in minutes"
+  default     = 3
+}
+
+variable "memory" {
+  type        = number
+  description = "memory ram for lambda"
+  default     = 128
 }
